@@ -124,6 +124,10 @@
 }
 QTabBar::tab:selected {
 	background-color: #676A71;
+}
+QWidget {
+	background-color: #000000;
+	color: #FFFFFF;
 }</string>
      </property>
      <property name="currentIndex">

@@ -14,33 +14,6 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 }
 
 
-win32 {
-    LIBS += -lshlwapi
-    LIBS += $$join(BOOST_LIB_PATH,,-L,) $$join(BDB_LIB_PATH,,-L,) $$join(OPENSSL_LIB_PATH,,-L,) $$join(QRENCODE_LIB_PATH,,-L,)
-    LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX -lcrypt32
-    LIBS += -lws2_32 -lole32 -loleaut32 -luuid -lgdi32
-    LIBS += -lboost_system-mgw49-mt-s-1_57 -lboost_filesystem-mgw49-mt-s-1_57 -lboost_program_options-mgw49-mt-s-1_57 -lboost_thread-mgw49-mt-s-1_57
-    LIBS += -L"F:/cdev/deps/MinGW/msys/1.0/local/lib"
-    LIBS += -L"F:/cdev/deps/libcommuni-3.2.0/lib"
-
-    #INCLUDEPATH += "C:/deps/MinGW/msys/1.0/local/include"
-    #INCLUDEPATH += "C:/deps/libcommuni-3.2.0/include/IrcCore"
-    #INCLUDEPATH += "C:/deps/libcommuni-3.2.0/include/IrcModel"
-    #INCLUDEPATH += "C:/deps/libcommuni-3.2.0/include/IrcUtil"
-
-    BOOST_LIB_SUFFIX=-mgw49-mt-s-1_57
-    BOOST_INCLUDE_PATH=F:/cdev/deps/boost_1_57_0
-    BOOST_LIB_PATH=F:/cdev/deps/boost_1_57_0/stage/lib
-    BDB_INCLUDE_PATH=F:/cdev/deps/db-4.8.30.NC/build_unix
-    BDB_LIB_PATH=F:/cdev/deps/db-4.8.30.NC/build_unix
-    OPENSSL_INCLUDE_PATH=F:/cdev/deps/openssl-1.0.1j/include
-    OPENSSL_LIB_PATH=F:/cdev/deps/openssl-1.0.1j
-    MINIUPNPC_INCLUDE_PATH=F:/cdev/deps/
-    MINIUPNPC_LIB_PATH=F:/cdev/deps/miniupnpc
-    QRENCODE_INCLUDE_PATH=F:/cdev/deps/qrencode-3.4.4
-    QRENCODE_LIB_PATH=F:/cdev/deps/qrencode-3.4.4/.libs
- }
-
 # for boost 1.37, add -mt to the boost libraries
 # use: qmake BOOST_LIB_SUFFIX=-mt
 # for boost thread win32 with _win32 sufix
@@ -154,7 +127,7 @@ SOURCES += src/txdb-leveldb.cpp
         QMAKE_RANLIB = $$replace(QMAKE_STRIP, strip, ranlib)
     }
     LIBS += -lshlwapi
-    #genleveldb.commands = cd $$PWD/src/leveldb && CC=$$QMAKE_CC CXX=$$QMAKE_CXX TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) OPT=\"$$QMAKE_CXXFLAGS $$QMAKE_CXXFLAGS_RELEASE\" libleveldb.a libmemenv.a && $$QMAKE_RANLIB $$PWD/src/leveldb/libleveldb.a && $$QMAKE_RANLIB $$PWD/src/leveldb/libmemenv.a
+    genleveldb.commands = cd $$PWD/src/leveldb && CC=$$QMAKE_CC CXX=$$QMAKE_CXX TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) OPT=\"$$QMAKE_CXXFLAGS $$QMAKE_CXXFLAGS_RELEASE\" libleveldb.a libmemenv.a && $$QMAKE_RANLIB $$PWD/src/leveldb/libleveldb.a && $$QMAKE_RANLIB $$PWD/src/leveldb/libmemenv.a
 }
 genleveldb.target = $$PWD/src/leveldb/libleveldb.a
 genleveldb.depends = FORCE

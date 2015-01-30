@@ -1,4 +1,4 @@
-Camorracoin Version 3.0.0.0
+Camorracoin Version 2.1.1.1
 
 Camorracoin is a PoS-based cryptocurrency.
 

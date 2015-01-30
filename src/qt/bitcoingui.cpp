@@ -68,11 +68,8 @@
 extern CWallet* pwalletMain;
 extern int64_t nLastCoinStakeSearchInterval;
 double GetPoSKernelPS();
-#define VERTICAL_TOOBAR_STYLESHEET "QToolBar {\
-}"
-#define HORIZONTAL_TOOLBAR_STYLESHEET "QToolBar {\
-}"
-
+#define VERTICAL_TOOBAR_STYLESHEET "QToolBar { background: #34373E; } QToolButton { background: #676A71; color: #FFFFFF; } QToolButton:pressed { background-color: #81848B; }"
+#define HORIZONTAL_TOOLBAR_STYLESHEET "QToolBar { background: #34373E; } QToolButton { background: #676A71; color: #FFFFFF; } QToolButton:pressed { background-color: #81848B; }"
 ActiveLabel::ActiveLabel(const QString & text, QWidget * parent):
     QLabel(parent){}
 
@@ -358,6 +355,11 @@ void BitcoinGUI::createMenuBar()
     // Get the main window's menu bar on other platforms
     appMenuBar = menuBar();
 #endif
+
+    // Style the menu
+
+    appMenuBar->setStyleSheet("QMenuBar { background: #000000; color: #FFFFFF; } QMenu { background-color: #676A71; color: #FFFFFF; } QMenu::item:selected { background-color: #34373E; }");
+
 
     // Configure the menus
     QMenu *file = appMenuBar->addMenu(tr("&File"));

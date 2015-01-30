@@ -519,6 +519,12 @@ QLineEdit:hover {
            <property name="toolTip">
             <string>SOCKS version of the proxy (e.g. 5)</string>
            </property>
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+	background-color: #34373E;
+	color: #FFFFFF;
+}</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -670,6 +676,12 @@ QCheckBox::indicator:checked {
            <property name="toolTip">
             <string>The user interface language can be set here. This setting will take effect after restarting Camorracoin.</string>
            </property>
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+	background-color: #34373E;
+	color: #FFFFFF;
+}</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -693,6 +705,12 @@ QCheckBox::indicator:checked {
           <widget class="QValueComboBox" name="unit">
            <property name="toolTip">
             <string>Choose the default subdivision unit to show in the interface and when sending coins.</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QComboBox {
+	background-color: #34373E;
+	color: #FFFFFF;
+}</string>
            </property>
           </widget>
          </item>
